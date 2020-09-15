@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// $theme-colors: (
+//   "primary": maroon,
+//   "danger": #ff4136
+// );
+
+
+@import "./../node_modules/bootstrap/scss/bootstrap.scss";
+$border-radius: 10rem;
+
+.Guess__numbers {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.your_guess_class {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: .05rem;
+}

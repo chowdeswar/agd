@@ -1,0 +1,28 @@
+<div class="Guess__numbers container">
+    <h1>Guess the Number !</h1>
+
+    <div class="alert alert-secondary">
+        <h1 class="mb-0"><small>Guess the computer generated random number between 1 and 100</small>
+        </h1>
+    </div>
+
+    <div>
+        <form #guessForm="ngForm">
+            <label class="your_guess_class" for="your_guess">Your Guess: </label> &nbsp;
+            <input type="number" name="guess" id="your_guess" [(ngModel)]="guess" #guessNumb="ngModel" placeholder="Enter number" required>
+            <button type="submit" [disabled]="!guessForm.valid" (click)="verifyNumber()" class="btn btn-primary btn-sm mx-2 text-white">Verify</button>
+            <button type="button" class="btn btn-warning btn-sm text-white" (click)="restartNumber()">Restart</button>
+        </form>
+    </div>
+
+    <p *ngIf="guessFlag" class="text-danger">Enter valid number</p>
+
+    <div>
+        <p *ngIf="deviation < 0" class="text-danger">Your guess is higher.</p>
+        <p *ngIf="deviation > 0" class="text-danger">Your guess is lower.</p>
+        <p *ngIf="deviation == 0" class="text-success">Yes That's it!</p>
+    </div>
+    <div class="mt-2">
+        <h3>No of guesses : <span class="badge badge-pill badge-secondary">{{ guessTimes }}</span></h3>
+    </div>
+</div>

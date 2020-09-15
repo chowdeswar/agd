@@ -1,0 +1,17 @@
+<style>
+    .child {
+        padding: 50px;
+        border: 1px solid #fff;
+        margin: 20px;
+        background: white;
+    }
+    
+</style>
+
+<div class="child">
+    <h2>Child Component -  {{ childInput }}</h2>
+    <small>Value entered in parent Component</small>
+    <br>
+    <input type="text" placeholder="" #tempRef> &nbsp;
+    <button (click)="childClick(tempRef.value)">Click me</button>
+</div>
